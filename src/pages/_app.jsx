@@ -1,13 +1,37 @@
 import { wrapper } from "@/redux/store";
 import RootLayout from "@/layout";
+import { MantineProvider } from "@mantine/core";
+import SEO from "@/components/SEO";
 import "@/styles/globals.scss";
 
-const App = ({ Component, pageProps}) => {
+const App = ({ Component, pageProps }) => {
     return (
-            <RootLayout>
-                <Component {...pageProps} />
-            </RootLayout>
+        <>
+            <SEO />
+            <MantineProvider
+                withCSSVariables
+                withNormalizeCSS
+                theme={{
+                    components: {
+                        Container: {
+                            defaultProps: {
+                                sizes: {
+                                    sm: 576,
+                                    md: 768,
+                                    lg: 992,
+                                    xl: 1400,
+                                },
+                            },
+                        },
+                    },
+                }}
+            >
+                <RootLayout>
+                    <Component {...pageProps} />
+                </RootLayout>
+            </MantineProvider>
+        </>
     );
-}
+};
 
 export default wrapper.withRedux(App);

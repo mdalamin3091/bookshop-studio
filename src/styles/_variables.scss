@@ -1,21 +1,14 @@
-$primaryColor: #000000;
+$primary:#ff5900;
+$secondary:blue;
 
-$Btn-Primary: #DF3458;
-$Btn-Secondary: #1E1F24;
+$container-xs: 0;
+$container-sm: 576px;
+$container-md: 768px;
+$container-lg: 992px;
+$container-xl: 1200px;
 
-$Btn-Primary-hover: #CB2649;
-$Btn-Secondary-hover: #000000;
-
-$Btn-Primary-disable: #DF8196;
-$Btn-Secondary-disable: #C6C6CA;
-
-$Button-Primary: #DF3458;
-$Button-Secondary: #1E1F24;
-
-$brand-gradient: linear-gradient(36.75deg, #B0397F 4.72%, #DC324F 42.03%, #FF4040 66.63%, #FCB24D 95.28%);
-
-$Button-Primary-hover: #CB2649;
-$Button-Secondary-hover: #000000;
-
-$Button-Primary-disable: #DF8196;
-$Button-Secondary-disable: #C6C6CA;
+// $container-xs: 540px;
+// $container-sm: 720px;
+// $container-md: 960px;
+// $container-lg: 1140px;
+// $container-xl: 1320px;
