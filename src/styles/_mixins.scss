@@ -1,7 +1,7 @@
 // responsive mixin
 @mixin responsiveByBreakPoint($breakpoint) {
 	@if $breakpoint ==phone {
-		@media only screen and (max-width: 460px) {
+		@media only screen and (max-width: 576px) {
 			@content;
 		}
 	}
@@ -19,13 +19,11 @@
 	}
 
 	@if $breakpoint ==big-desktop {
-		@media only screen and (min-width: 1200px) {
+		@media only screen and (min-width: 1400px) {
 			@content;
 		}
 	}
 }
-
-
 // display flex mixin
 @mixin flex($alignItems: null, $justifyContent: null, $direction: null, $wrap: null, $gap: null) {
 	display: flex;
@@ -34,14 +32,6 @@
 	flex-direction: $direction;
 	flex-wrap: $wrap;
 	gap: $gap;
-}
-
-@mixin textOverFlow($line: 1) {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-line-clamp: $line;
-	-webkit-box-orient: vertical;
 }
 
 @mixin typography($size: 14px, $weight: 400, $color: null) {

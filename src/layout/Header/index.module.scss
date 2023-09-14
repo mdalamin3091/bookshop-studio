@@ -1,0 +1,21 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_variables.scss";
+
+.nav_menu{
+    @include flex($alignItems:center, $justifyContent:flex-end, $gap:13px);
+    li{
+        list-style-type: none;
+        cursor: pointer;
+        a{
+            text-decoration: none;
+            color: #222222;
+            font-size: $font-sm;
+            transition: color .4s ease;
+            letter-spacing: 1px;
+
+            &:hover{
+                color: $primary;
+            }
+        }
+    }
+}
