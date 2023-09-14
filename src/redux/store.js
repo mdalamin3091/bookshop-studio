@@ -11,10 +11,10 @@ export function makeStore() {
         },
         middleware: (gDM) =>
             gDM().concat(apiSlice.middleware),
-        devTools: process.env.NEXT_PUBLIC_ENV === "development",
+        devTools: process.env.NEXT_PUBLIC_ENV !== "production",
     });
 }
 
 export const wrapper = createWrapper(makeStore, {
-    debug: process.env.NEXT_PUBLIC_ENV === "development" && false,
+    debug: process.env.NEXT_PUBLIC_ENV !== "production",
 });
