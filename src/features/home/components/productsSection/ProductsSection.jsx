@@ -9,7 +9,7 @@ import styles from "../../home.module.scss";
 const ProductsSection = () => {
     const { isMobile } = useResponsive();
     return (
-        <Container size="xl">
+        <Container size="xl" py="xl">
             <Grid gutter="xl">
                 <Grid.Col span={isMobile ? 12 : 3}>
                     <NewArrivals />
