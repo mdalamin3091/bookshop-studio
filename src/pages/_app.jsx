@@ -12,6 +12,9 @@ const App = ({ Component, pageProps }) => {
                 withCSSVariables
                 withNormalizeCSS
                 theme={{
+                    colors:{
+                        primaryColors:["#ff5900"]
+                    },
                     components: {
                         Container: {
                             defaultProps: {
