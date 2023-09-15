@@ -1,27 +1,27 @@
 @import "../../styles/_mixins.scss";
 @import "../../styles/_variables.scss";
 
-.banner_image{
+.banner_image {
     width: 100%;
     height: auto;
 }
 
-.category_item{
+.category_item {
     position: relative;
     overflow: hidden;
 
-    &_img{
-        img{
+    &_img {
+        img {
             width: 100%;
             z-index: -1;
             transition: all .7s ease;
         }
     }
 
-    &_title{
+    &_title {
         position: absolute;
-        top: 50%;  
-        left: 50%; 
+        top: 50%;
+        left: 50%;
         z-index: 1;
         transform: translate(-50%, -50%);
         font-size: $font-xl;
@@ -31,27 +31,54 @@
         color: #222222;
         cursor: pointer;
         transition: all ease .5s;
-        &:hover{
+
+        &:hover {
             color: $primary;
         }
     }
-    &:hover &_img img{
-        transform:scale(1.2)
+
+    &:hover &_img img {
+        transform: scale(1.2)
     }
-    &:hover &_title{
+
+    &:hover &_title {
         color: $primary;
     }
 }
 
-.product_items{
-    img{
+.product_items {
+    img {
         width: 100%;
     }
 }
 
-.new_arrivals{
+.new_arrivals {
     img {
         width: 45%;
     }
-    @include flex($gap:10px);
+
+    @include flex($gap: 10px);
+}
+
+.shipping_service_wrap {
+
+    border-block: 1px solid #ddd;
+    padding-block: 50px;
+
+    .shipping_service_item {
+        border-right: 1px solid #ddd;
+        cursor: pointer;
+
+        &:hover h1 {
+            color: $primary;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+        @include responsiveByBreakPoint(phone){
+            border-right: none;
+            text-align: center;
+        }
+    }
 }
