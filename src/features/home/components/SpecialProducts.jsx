@@ -16,10 +16,10 @@ import { BsArrowRightShort } from "react-icons/bs";
 import useResponsive from "@/hooks/useResponsive";
 import styles from "../home.module.scss";
 
-const ProductSection = () => {
+const SpecialProducts = () => {
     const { isMobile } = useResponsive();
     return (
-        <Container size="xl" py="xl">
+        <Container size="xl" py="50px">
             <Box>
                 <Text align="center" size="36px" mb="sm">
                     Special Product
@@ -58,4 +58,4 @@ const ProductSection = () => {
     );
 };
 
-export default ProductSection;
+export default SpecialProducts;

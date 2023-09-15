@@ -1,16 +1,20 @@
 import SEO from "@/components/SEO";
+import BannerSection from "@/features/home/components/BannerSection";
 import CategorySection from "@/features/home/components/CategorySection";
 import HeroSection from "@/features/home/components/HeroSection";
-import ProductSection from "@/features/home/components/ProductSection";
+import ProductsSection from "@/features/home/components/productsSection/ProductsSection";
+import SpecialProducts from "@/features/home/components/SpecialProducts";
 
 export default function Home() {
     return (
         <>  
-            <SEO pageTitle={"WebManza"} pageDescription={"this is a ecommerce platform"}/>
             {/* <h1>In the name of Allah</h1> */}
+            <SEO pageTitle="Bookshop Studio" pageDescription={"this is a ecommerce platform"}/>
             <HeroSection />
             <CategorySection />
-            <ProductSection />
+            <SpecialProducts />
+            <BannerSection />
+            <ProductsSection />
         </>
     );
 }

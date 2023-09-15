@@ -8,7 +8,7 @@ const roboto = Roboto({
     display: "swap",
 });
 
-const SEO = ({ pageTitle = "Webmanza", pageDescription = "This is a ecommerce platform" }) => {
+const SEO = ({ pageTitle = "Bookshop Studio", pageDescription = "This is a ecommerce platform" }) => {
     return (
         <Head>
             <title>{pageTitle}</title>
