@@ -5,3 +5,40 @@
     width: 100%;
     height: auto;
 }
+
+.category_item{
+    position: relative;
+    overflow: hidden;
+
+    &_img{
+        img{
+            width: 100%;
+            z-index: -1;
+            transition: all .7s ease;
+        }
+    }
+
+    &_title{
+        position: absolute;
+        top: 50%;  
+        left: 50%; 
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        font-size: $font-xl;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #222222;
+        cursor: pointer;
+        transition: all ease .5s;
+        &:hover{
+            color: $primary;
+        }
+    }
+    &:hover &_img img{
+        transform:scale(1.2)
+    }
+    &:hover &_title{
+        color: $primary;
+    }
+}
