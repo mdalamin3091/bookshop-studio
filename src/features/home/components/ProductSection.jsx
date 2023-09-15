@@ -1,6 +1,7 @@
 import React from "react";
 import {
     Box,
+    Button,
     Center,
     Container,
     Divider,
@@ -11,10 +12,14 @@ import {
     Text,
 } from "@mantine/core";
 import TabButton from "@/components/TabButton";
+import { BsArrowRightShort } from "react-icons/bs";
+import useResponsive from "@/hooks/useResponsive";
 import styles from "../home.module.scss";
+
 const ProductSection = () => {
+    const { isMobile } = useResponsive();
     return (
-        <Container size="xl" py="lg">
+        <Container size="xl" py="xl">
             <Box>
                 <Text align="center" size="36px" mb="sm">
                     Special Product
@@ -27,7 +32,7 @@ const ProductSection = () => {
                 <TabButton title="Story" />
                 <TabButton title="Academic" />
             </Flex>
-            <SimpleGrid cols={5} spacing="lg">
+            <SimpleGrid cols={isMobile ? 2 : 5} spacing="lg">
                 {Array(10)
                     .fill(null)
                     .map((_, index) => (
@@ -37,13 +42,18 @@ const ProductSection = () => {
                                 alt="product"
                             />
                             <Stack justify="center" align="center" spacing="4px" mt="15px">
-                                <Rating readOnly c="#777777"/>
+                                <Rating readOnly c="#777777" />
                                 <Text c="#777777" fz="md">I Am Watching you</Text>
                                 <Text fw="bold">৳600</Text>
                             </Stack>
                         </Box>
                     ))}
             </SimpleGrid>
+            <Center mt="lg">
+                <Button rightIcon={<BsArrowRightShort />} variant="outline" uppercase fz="md">
+                    More Products
+                </Button>
+            </Center>
         </Container>
     );
 };
