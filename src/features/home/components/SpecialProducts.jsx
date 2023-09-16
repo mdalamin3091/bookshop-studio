@@ -16,6 +16,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 import useResponsive from "@/hooks/useResponsive";
 import { useGetProductByCategoryQuery } from "@/redux/features/products/productApi";
 import styles from "../home.module.scss";
+import Link from "next/link";
 
 const SpecialProducts = () => {
     const { isMobile } = useResponsive();
@@ -39,10 +40,12 @@ const SpecialProducts = () => {
                     .fill(null)
                     .map((_, index) => (
                         <Box className={styles.product_items} key={index}>
-                            <img
-                                src="https://api.admin.webmanza.com/assets/product/gallery/139_20_1663570856356_313229747_product_gallery.jpeg"
-                                alt="product"
-                            />
+                            <Link href={`product/${index}`}>
+                                <img
+                                    src="https://api.admin.webmanza.com/assets/product/gallery/139_20_1663570856356_313229747_product_gallery.jpeg"
+                                    alt="product"
+                                />
+                            </Link>
                             <Stack justify="center" align="center" spacing="4px" mt="15px">
                                 <Rating readOnly c="#777777" />
                                 <Text c="#777777" fz="md">I Am Watching you</Text>
