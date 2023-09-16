@@ -1,4 +1,4 @@
-import { wrapper } from "@/redux/store";
+import { wrapper } from "@/redux/app/store";
 import RootLayout from "@/layout";
 import { MantineProvider } from "@mantine/core";
 import SEO from "@/components/SEO";

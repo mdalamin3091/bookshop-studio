@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
-import { apiSlice } from "./features/api/apiSlice";
-import productReducer from "./features/products/productSlice";
-import sidebarReducer from "./features/sidebar/sidebarSlice";
+import { apiSlice } from "./api/apiSlice";
+import productReducer from "../features/products/productSlice";
+import sidebarReducer from "../features/sidebar/sidebarSlice";
+import authReducer from "../features/auth/authSlice";
 
 export function makeStore() {
     return configureStore({
@@ -10,6 +11,7 @@ export function makeStore() {
             [apiSlice.reducerPath]: apiSlice.reducer,
             products: productReducer,
             sidebar: sidebarReducer,
+            auth: authReducer
         },
         middleware: (gDM) =>
             gDM().concat(apiSlice.middleware),
