@@ -6,8 +6,8 @@ const baseQuery = fetchBaseQuery({
     baseUrl: "https://api.webmanza.com/",
     prepareHeaders: (headers, { getState }) => {
         let token = getState().auth.access_token;
-        headers.set("Origin", "bookshop.webmanza.com");
 
+        headers.set("Origin", "https://bookshop.webmanza.com");
         if (token) {
             headers.set("Authorization", `Bearer ${token}`);
         }
@@ -17,13 +17,11 @@ const baseQuery = fetchBaseQuery({
 
 const baseQueryWithReauth = async (args, api, extraOptions) => {
     let result = await baseQuery(args, api, extraOptions);
-    if (result.error && result.error.status_code === 6000) {
-        console.log("error", result)
+    if (result.data && result.data.status_code === 6000) {
         const refreshResult = await baseQuery(
             {
                 url: "/auth/v2/get-access-token",
                 method: "POST",
-                headers: { Origin: "https://bookshop.webmanza.com" },
             },
             api,
             extraOptions
@@ -31,11 +29,11 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
 
         if (refreshResult?.data) {
             const user = api.getState();
-            console.log("refreshResult", refreshResult)
-            console.log("user", user)
-            
+            console.log("refresh result", refreshResult.data);
+
             // store access token in cookie or localstorage
-            api.dispatch(setCredentials({ ...refreshResult, user }));
+            // api.dispatch(setCredentials({ ...refreshResult, user }));
+            api.dispatch(setCredentials({...refreshResult.data}));
 
             // retry the initial query
             result = await baseQuery(args, api, extraOptions);
@@ -55,10 +53,7 @@ export const apiSlice = createApi({
     endpoints: (builder) => ({}),
 });
 
-// Export hooks for usage in functional components
 export const {
     util: { getRunningQueriesThunk },
 } = apiSlice;
 
-// export endpoints for use in SSR
-export const {} = apiSlice.endpoints;
