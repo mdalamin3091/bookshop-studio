@@ -2,7 +2,7 @@
 import React from "react";
 import { Carousel } from "@mantine/carousel";
 import { Box } from "@mantine/core";
-import styles from "../home.module.scss";
+import styles from "../index.module.scss";
 
 const CategorySection = () => {
     return (

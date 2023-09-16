@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { Fragment } from "react";
-import styles from "../home.module.scss";
+import styles from "../index.module.scss";
 const HeroSection = () => {
     return (
         <Fragment>

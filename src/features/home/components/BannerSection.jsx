@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Box } from "@mantine/core";
-import styles from "../home.module.scss";
+import styles from "../index.module.scss";
 
 const BannerSection = () => {
     return (

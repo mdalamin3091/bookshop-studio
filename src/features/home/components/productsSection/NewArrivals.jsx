@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Box, Divider, Flex, Rating, Stack, Text } from "@mantine/core";
-import styles from "../../home.module.scss";
+import styles from "../../index.module.scss";
 import { Carousel } from "@mantine/carousel";
 
 const NewArrivals = () => {

@@ -11,12 +11,12 @@ import {
     Stack,
     Text,
 } from "@mantine/core";
+import Link from "next/link";
 import TabButton from "@/components/TabButton";
 import { BsArrowRightShort } from "react-icons/bs";
 import useResponsive from "@/hooks/useResponsive";
 import { useGetProductByCategoryQuery } from "@/redux/features/products/productApi";
-import styles from "../home.module.scss";
-import Link from "next/link";
+import styles from "../index.module.scss";
 
 const SpecialProducts = () => {
     const { isMobile } = useResponsive();

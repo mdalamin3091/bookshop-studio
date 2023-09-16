@@ -4,7 +4,7 @@ import { Carousel } from '@mantine/carousel';
 import useResponsive from '@/hooks/useResponsive';
 import NewArrivals from './NewArrivals';
 import TabButton from '@/components/TabButton';
-import styles from "../../home.module.scss";
+import styles from "../../index.module.scss";
 
 const ProductsSection = () => {
     const { isMobile } = useResponsive();

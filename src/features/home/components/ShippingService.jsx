@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Flex, SimpleGrid, Text, Title } from "@mantine/core";
 import useResponsive from "@/hooks/useResponsive";
-import styles from "../home.module.scss";
+import styles from "../index.module.scss";
 
 const ShippingService = () => {
     const { isMobile } = useResponsive();
