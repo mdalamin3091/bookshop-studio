@@ -1,5 +1,13 @@
+import {
+    getProductByCategory,
+    getProductDetails,
+    useGetProductDetailsQuery,
+} from "@/redux/features/products/productApi";
+import {
+    useGetThemeDataQuery,
+    getThemeData,
+} from "@/redux/features/themeData/themeDataApi";
 import ProductsSection from "@/features/home/components/productsSection/ProductsSection";
-import { useGetThemeDataQuery, getThemeData } from "@/redux/features/themeData/themeDataApi";
 import CategorySection from "@/features/home/components/CategorySection";
 import ShippingService from "@/features/home/components/ShippingService";
 import SpecialProducts from "@/features/home/components/SpecialProducts";
@@ -11,11 +19,14 @@ import SEO from "@/components/SEO";
 
 export default function Home() {
     const { data } = useGetThemeDataQuery(undefined);
-    console.log("res", data)
+    const result = useGetProductDetailsQuery();
     return (
         <>
             {/* <h1>In the name of Allah</h1> */}
-            <SEO pageTitle="Bookshop Studio" pageDescription={"this is a ecommerce platform"} />
+            <SEO
+                pageTitle="Bookshop Studio"
+                pageDescription={"this is a ecommerce platform"}
+            />
             <HeroSection />
             <CategorySection />
             <SpecialProducts />
@@ -29,6 +40,8 @@ export default function Home() {
 export const getServerSideProps = wrapper.getServerSideProps(
     (store) => async () => {
         store.dispatch(getThemeData.initiate());
+        store.dispatch(getProductByCategory.initiate());
+        store.dispatch(getProductDetails.initiate());
 
         await Promise.all(store.dispatch(getRunningQueriesThunk()));
         return {

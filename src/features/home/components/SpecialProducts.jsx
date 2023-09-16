@@ -14,10 +14,12 @@ import {
 import TabButton from "@/components/TabButton";
 import { BsArrowRightShort } from "react-icons/bs";
 import useResponsive from "@/hooks/useResponsive";
+import { useGetProductByCategoryQuery } from "@/redux/features/products/productApi";
 import styles from "../home.module.scss";
 
 const SpecialProducts = () => {
     const { isMobile } = useResponsive();
+    const { data } = useGetProductByCategoryQuery(undefined);
     return (
         <Container size="xl" py="50px">
             <Box>

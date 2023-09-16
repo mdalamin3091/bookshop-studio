@@ -7,7 +7,6 @@ import {
     Input,
     Stack,
     Text,
-    Title,
 } from "@mantine/core";
 import Image from "next/image";
 import { HiMapPin, HiOutlineEnvelope } from "react-icons/hi2";
