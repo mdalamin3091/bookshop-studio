@@ -17,7 +17,7 @@ import ProductCard from "@/components/ProductCard";
 
 const SpecialProducts = () => {
     const { isMobile } = useResponsive();
-    const { data } = useGetProductByCategoryQuery(undefined);
+    const { data: { data } = {} } = useGetProductByCategoryQuery(undefined);
     return (
         <Container size="xl" py="50px">
             <Box>
@@ -33,10 +33,8 @@ const SpecialProducts = () => {
                 <TabButton title="Academic" />
             </Flex>
             <SimpleGrid cols={isMobile ? 2 : 5} spacing="lg">
-                {Array(10)
-                    .fill(null)
-                    .map((_, index) => (
-                        <ProductCard key={index}/>
+                {data && data?.map((product, index) => (
+                        <ProductCard product={product} key={index} />
                     ))}
             </SimpleGrid>
             <Center mt="lg">
