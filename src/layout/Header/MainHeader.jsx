@@ -12,9 +12,9 @@ import Sidebar from "../Sidebar";
 
 const MainHeader = () => {
     const dispatch = useDispatch();
-    const openDrawer =  useSelector(selectOpendrawer);
+    const openDrawer = useSelector(selectOpendrawer);
 
-    const handleDrawer = () =>{
+    const handleDrawer = () => {
         dispatch(setOpenDrawer(true))
     }
     return (
@@ -22,15 +22,17 @@ const MainHeader = () => {
             <Container size="xl">
                 <Grid align="center" m={0}>
                     <Grid.Col md={6}>
-                        <Burger opened={openDrawer} onClick={handleDrawer}/>
-                        <Image
-                            src="https://i.ibb.co/YZ1SDCR/logo.jpg"
-                            width={250}
-                            height={65}
-                            objectFit="cover"
-                            alt="logo"
-                            priority
-                        />
+                        <Burger opened={openDrawer} onClick={handleDrawer} />
+                        <Link href="/">
+                            <Image
+                                src="https://i.ibb.co/YZ1SDCR/logo.jpg"
+                                width={250}
+                                height={65}
+                                objectFit="cover"
+                                alt="logo"
+                                priority
+                            />
+                        </Link>
                     </Grid.Col>
                     <Grid.Col md={6}>
                         <ul className={styles.nav_menu}>
