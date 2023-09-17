@@ -16,10 +16,21 @@ import HeroSection from "@/features/home/components/HeroSection";
 import { getRunningQueriesThunk } from "@/redux/app/api/apiSlice";
 import { wrapper } from "@/redux/app/store";
 import SEO from "@/components/SEO";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setThemeInfo } from "@/redux/features/themeData/themeDataSlice";
 
 export default function Home() {
-    const { data } = useGetThemeDataQuery(undefined);
-    const result = useGetProductDetailsQuery();
+    const { data, isSuccess } = useGetThemeDataQuery(undefined);
+    const dispatch = useDispatch();
+    // const result = useGetProductDetailsQuery();
+
+    useEffect(()=>{
+        if(isSuccess && data){
+            dispatch(setThemeInfo(data))
+        }
+    }, [data, dispatch, isSuccess])
+    
     return (
         <>
             {/* <h1>In the name of Allah</h1> */}

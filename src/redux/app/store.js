@@ -4,6 +4,7 @@ import { apiSlice } from "./api/apiSlice";
 import productReducer from "../features/products/productSlice";
 import sidebarReducer from "../features/sidebar/sidebarSlice";
 import authReducer from "../features/auth/authSlice";
+import themeDataReducer from "../features/themeData/themeDataSlice";
 
 export function makeStore() {
     return configureStore({
@@ -11,6 +12,7 @@ export function makeStore() {
             [apiSlice.reducerPath]: apiSlice.reducer,
             products: productReducer,
             sidebar: sidebarReducer,
+            themeData:themeDataReducer,
             auth: authReducer
         },
         middleware: (gDM) =>

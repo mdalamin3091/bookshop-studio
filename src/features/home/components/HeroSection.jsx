@@ -1,11 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { Fragment } from "react";
 import styles from "../index.module.scss";
+import useResponsive from "@/hooks/useResponsive";
+import { selectThemeInfo } from "@/redux/features/themeData/themeSelector";
+import { useSelector } from "react-redux";
+
 const HeroSection = () => {
+
+    const { isMobile } = useResponsive();
+    const { data: { theme_info: { slider_g5BCN7 } = {} } = {} } = useSelector(selectThemeInfo) || {};
+
     return (
         <Fragment>
             <img
-                src="https://sg-api.admin.webmanza.com/4571dbd0-2cd7-11ed-9717-00155d212c06/uploads/20_1680588807441-bookshopjpg.jpeg"
+                src={
+                    isMobile
+                        ? slider_g5BCN7?.list[0].mobile_banner_url
+                        : slider_g5BCN7?.list[0].banner_url
+                }
                 alt="banner"
                 className={styles.banner_image}
             />
