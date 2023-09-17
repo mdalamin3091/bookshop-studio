@@ -35,6 +35,7 @@ const ShippingService = () => {
                                 <Text
                                     color="#444444"
                                     fz="sm"
+                                    tt="capitalize"
                                     dangerouslySetInnerHTML={{
                                         __html: service.content
                                     }}

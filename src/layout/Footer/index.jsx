@@ -11,35 +11,48 @@ import {
 import Image from "next/image";
 import { HiMapPin, HiOutlineEnvelope } from "react-icons/hi2";
 import { IoMdCall } from "react-icons/io";
+// import { FaFacebookSquare } from "react-icons/fa";
 import Link from "next/link";
 import useResponsive from "@/hooks/useResponsive";
+import { useSelector } from "react-redux";
+import { selectThemeInfo } from "@/redux/features/themeData/themeSelector";
 
 const Footer = () => {
     const { isMobile } = useResponsive();
+    const { data: { footer: { body } = {} } = {} } =
+        useSelector(selectThemeInfo) || {};
+    const { column1, column2, column3, column4 } = body || {};
     return (
         <Container size="xl" py="xl">
             <Grid>
+                {/* col - 1 */}
                 <Grid.Col span={isMobile ? 12 : 5}>
-                    <Image
-                        src="https://i.ibb.co/YZ1SDCR/logo.jpg"
-                        width={250}
-                        height={65}
-                        objectFit="cover"
-                        alt="logo"
-                        priority
-                    />
-                    <Text c="#444444" lh="32px" mt="25px" pr="50px">
-                        A bookshop is a specialized retail establishment that
-                        primarily sells books, both fiction and non-fiction,
-                        across various genres and subjects. Often a sanctuary
-                        for bibliophiles, a bookshop might also offer related
-                        items such as magazines, newspapers, stationery, and
-                        sometimes music or movies.
-                    </Text>
+                    {column1?.list.logo_4ECq53.allow && (
+                        <Image
+                            src={"https://i.ibb.co/YZ1SDCR/logo.jpg"}
+                            width={250}
+                            height={65}
+                            objectFit="cover"
+                            alt="logo"
+                            priority
+                        />
+                    )}
+                    <Text
+                        c="#444444"
+                        lh="32px"
+                        mt="25px"
+                        pr="50px"
+                        mb="md"
+                        dangerouslySetInnerHTML={{
+                            __html: column1?.list?.text_oaT6SY.content,
+                        }}
+                    ></Text>
                 </Grid.Col>
+
+                {/* col - 2 */}
                 <Grid.Col span={isMobile ? 12 : 3}>
                     <Text fz="36px" c="#222222" fw="bold" lh="37px" mb="5px">
-                        KNOW IT ALL FIRST!
+                        {column2?.list?.newsletter_nvABLM?.title}
                     </Text>
                     <Input placeholder="Enter your email" mb="lg" />
 
@@ -47,6 +60,8 @@ const Footer = () => {
                         Subscribe
                     </Button>
                 </Grid.Col>
+
+                {/* col - 3 */}
                 <Grid.Col span={isMobile ? 12 : 2}>
                     <Stack mt="lg" gap="md">
                         <Flex
@@ -78,16 +93,18 @@ const Footer = () => {
                         </Flex>
                     </Stack>
                 </Grid.Col>
+
+                {/* col - 4 */}
                 <Grid.Col span={isMobile ? 12 : 2}>
-                    <Text c="#222222" fz="18px" fw="bold" mb="lg">
-                        COMPANY
+                    <Text c="#222222" fz="18px" fw="bold" mb="lg" tt="uppercase">
+                        {column4?.title}
                     </Text>
                     <Stack gap="sm">
-                        <Link href="/">About Us</Link>
-                        <Link href="/">Contact Us</Link>
-                        <Link href="/">FAQ</Link>
-                        <Link href="/">Return Policy</Link>
-                        <Link href="/">Tearms & Condisions</Link>
+                        {
+                            column4?.list?.menubar_87srO8?.list.map((link) =>(
+                                <Link href={link.path} key={link.id}>{link.text}</Link>
+                            ))
+                        }
                     </Stack>
                 </Grid.Col>
             </Grid>
