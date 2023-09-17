@@ -1,7 +1,6 @@
 import {
     getProductByCategory,
-    getProductDetails,
-    useGetProductDetailsQuery,
+    getProductDetails
 } from "@/redux/features/products/productApi";
 import {
     useGetThemeDataQuery,
@@ -23,7 +22,6 @@ import { setThemeInfo } from "@/redux/features/themeData/themeDataSlice";
 export default function Home() {
     const { data, isSuccess } = useGetThemeDataQuery(undefined);
     const dispatch = useDispatch();
-    // const result = useGetProductDetailsQuery();
 
     useEffect(()=>{
         if(isSuccess && data){

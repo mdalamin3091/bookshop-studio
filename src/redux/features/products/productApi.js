@@ -9,15 +9,16 @@ const productApi = apiSlice.injectEndpoints({
         }),
 
         getProductDetails: builder.query({
-            query: () => ({
-                url: "product/v2/detail/04888ac8-85e2-11ed-9717-00155d212c06",
+            query: (slug) => ({
+                url: `product/v2/detail/${slug}`,
             }),
         }),
     }),
 });
 
 // Export hooks for usage in functional components
-export const { useGetProductByCategoryQuery, useGetProductDetailsQuery } = productApi;
+export const { useGetProductByCategoryQuery, useGetProductDetailsQuery } =
+    productApi;
 
 // export endpoints for use in SSR
 export const { getProductByCategory, getProductDetails } = productApi.endpoints;
