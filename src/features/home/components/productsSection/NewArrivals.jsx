@@ -2,8 +2,22 @@ import React, { Fragment } from "react";
 import { Box, Divider, Flex, Rating, Stack, Text } from "@mantine/core";
 import styles from "../../index.module.scss";
 import { Carousel } from "@mantine/carousel";
+import Link from "next/link";
 
-const NewArrivals = () => {
+const NewArrivals = ({ data }) => {
+    let defaultSrc =
+        "https://api.admin.webmanza.com/assets/product/gallery/139_20_1663570909172_675365760_product_gallery.jpeg";
+
+    // Chunk the data into groups of 4 products
+    const chunkedData = data ? data.reduce((acc, product, index) => {
+        if (index % 4 === 0) {
+            acc.push([product]);
+        } else {
+            acc[acc.length - 1].push(product);
+        }
+        return acc;
+    }, []) : [];
+
     return (
         <Fragment>
             <Flex>
@@ -14,42 +28,50 @@ const NewArrivals = () => {
             <Divider my="10px" />
             <Carousel
                 mx="auto"
-                slideSize="25%"
-                withControls={false}
+                slideSize="100%"
+                withControls={true}
                 slideGap="lg"
                 loop
                 align="start"
-                slidesToScroll={3}
+                slidesToScroll={1} // Scroll one slide at a time
             >
-                <Stack spacing="lg">
-                    {Array(4)
-                        .fill(null)
-                        .map((_, index) => (
-                            <Carousel.Slide key={index}>
-                                <Box className={styles.new_arrivals}>
-                                    <img
-                                        src="https://api.admin.webmanza.com/assets/product/gallery/139_20_1660221632022_634312141_product_gallery.jpeg"
-                                        alt="product"
-                                    />
-                                    <Stack
-                                        justify="center"
-                                        align="flex-start"
-                                        spacing="4px"
-                                        mt="15px"
-                                    >
-                                        <Rating readOnly c="#777777" />
-                                        <Text c="#777777" fz="md">
-                                            I Am Watching you. I Am Watching you
-                                        </Text>
-                                        <Text fw="bold">৳600</Text>
-                                    </Stack>
-                                </Box>
-                            </Carousel.Slide>
-
-                        ))}
-                </Stack>
+                {chunkedData.map((chunk, index) => (
+                    <Carousel.Slide key={index}>
+                        <Stack spacing="lg">
+                            {chunk.map((product, productIndex) => {
+                                const { slug, name, thumbnail, rating, price } =
+                                    product || {};
+                                return (
+                                    <Link key={productIndex} href={`product/${slug}`} className={styles.new_arrivals}>
+                                        <img
+                                            src={thumbnail?.src || defaultSrc}
+                                            alt={thumbnail?.alt}
+                                        />
+                                        <Stack
+                                            justify="center"
+                                            align="flex-start"
+                                            spacing="4px"
+                                            mt="15px"
+                                        >
+                                            <Rating
+                                                readOnly
+                                                c="#777777"
+                                                value={rating?.avg}
+                                            />
+                                            <Text c="#777777" fz="md">
+                                                {name}
+                                            </Text>
+                                            <Text fw="bold">
+                                                ৳{price?.base_sale}
+                                            </Text>
+                                        </Stack>
+                                    </Link>
+                                );
+                            })}
+                        </Stack>
+                    </Carousel.Slide>
+                ))}
             </Carousel>
-
         </Fragment>
     );
 };

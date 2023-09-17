@@ -2,12 +2,15 @@
 import React from "react";
 import { Box } from "@mantine/core";
 import styles from "../index.module.scss";
+import { useSelector } from "react-redux";
+import { selectThemeInfo } from "@/redux/features/themeData/themeSelector";
 
 const BannerSection = () => {
+    const { data: { theme_info: { image_osrc9o } = {} } = {} } = useSelector(selectThemeInfo) || {};
     return (
         <Box py="50px">
             <img
-                src="https://api.admin.webmanza.com/4571dbd0-2cd7-11ed-9717-00155d212c06/uploads/20_1685939726683-untitled-design-17jpg.jpeg"
+                src={image_osrc9o?.url}
                 alt="banner"
                 className={styles.banner_image}
             />

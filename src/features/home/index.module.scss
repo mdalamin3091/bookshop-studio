@@ -50,8 +50,7 @@
     img {
         width: 45%;
     }
-
-    @include flex($gap: 10px);
+    @include flex($gap: 15px);
 }
 
 .shipping_service_wrap {
@@ -74,5 +73,11 @@
             border-right: none;
             text-align: center;
         }
+    }
+}
+
+.product_items{
+    img{
+        width: 100%;
     }
 }
