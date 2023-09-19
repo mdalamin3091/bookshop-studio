@@ -1,49 +1,58 @@
 import { wrapper } from "@/redux/app/store";
 import RootLayout from "@/layout";
-import { MantineProvider } from "@mantine/core";
+import { Loader, MantineProvider } from "@mantine/core";
 import SEO from "@/components/SEO";
 import "@/styles/globals.scss";
+import { Fragment, useEffect, useState } from "react";
+import { theme } from "@/utils/theme";
+import { useRouter } from "next/router";
+import Preloader from "@/components/Preloader";
 
 const App = ({ Component, pageProps }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      setIsLoading(false);
+    });
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleStart = () => setIsLoading(true);
+    const handleComplete = () => setIsLoading(false);
+
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleComplete);
+    router.events.on("routeChangeError", handleComplete);
+
+    return () => {
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleComplete);
+      router.events.off("routeChangeError", handleComplete);
+    };
+  }, [router]);
+
   return (
     <>
-      <SEO />
-      <MantineProvider
-        withCSSVariables
-        withNormalizeCSS
-        theme={{
-          colors: {
-            primaryColors: ["#ff5900"],
-          },
-          components: {
-            Container: {
-              defaultProps: {
-                sizes: {
-                  sm: 576,
-                  md: 768,
-                  lg: 992,
-                  xl: 1400,
-                },
-              },
-            },
-            SegmentedControl: {
-              styles: {
-                root: {
-                  borderRadius: 0,
-                  width: "100%",
-                },
-                label: {
-                  fontSize: "12px",
-                },
-              },
-            },
-          },
-        }}
-      >
-        <RootLayout>
-          <Component {...pageProps} />
-        </RootLayout>
-      </MantineProvider>
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <Fragment>
+          <SEO />
+          <MantineProvider withCSSVariables withNormalizeCSS theme={theme}>
+            <RootLayout>
+              <Component {...pageProps} />
+            </RootLayout>
+          </MantineProvider>
+        </Fragment>
+      )}
     </>
   );
 };

@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-  images:{
-    domains:["i.ibb.co", "sg-api.admin.webmanza.com"]
-  }
-}
+  reactStrictMode: true,
+  images: {
+    domains: ["i.ibb.co", "sg-api.admin.webmanza.com"],
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
