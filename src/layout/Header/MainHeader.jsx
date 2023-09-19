@@ -50,7 +50,7 @@ const MainHeader = () => {
                 (body?.primary_menu &&
                   body.primary_menu.map((menu) => (
                     <li key={menu.id}>
-                      <Link href={menu.path}>{menu.text}</Link>
+                      <Link href="/">{menu.text}</Link>
                     </li>
                   )))}
               <li>

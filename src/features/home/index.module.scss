@@ -2,82 +2,88 @@
 @import "../../styles/_variables.scss";
 
 .banner_image {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .category_item {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-    &_img {
-        img {
-            width: 100%;
-            z-index: -1;
-            transition: all .7s ease;
-        }
+  &_img {
+    img {
+      width: 100%;
+      z-index: -1;
+      transition: all 0.7s ease;
     }
+  }
 
-    &_title {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 1;
-        transform: translate(-50%, -50%);
-        font-size: $font-xl;
-        font-weight: 600;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #222222;
-        cursor: pointer;
-        transition: all ease .5s;
+  &_title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    font-size: $font-xl;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #222222;
+    cursor: pointer;
+    transition: all ease 0.5s;
 
-        &:hover {
-            color: $primary;
-        }
+    &:hover {
+      color: $primary;
     }
+  }
 
-    &:hover &_img img {
-        transform: scale(1.2)
-    }
+  &:hover &_img img {
+    transform: scale(1.2);
+  }
 
-    &:hover &_title {
-        color: $primary;
-    }
+  &:hover &_title {
+    color: $primary;
+  }
 }
 
 .new_arrivals {
-    img {
-        width: 45%;
-    }
-    @include flex($gap: 15px);
+  img {
+    width: 45%;
+    border-radius: 4px;
+  }
+
+  @include flex($gap: 15px);
 }
 
 .shipping_service_wrap {
+  border-block: 1px solid #ddd;
+  padding-block: 50px;
 
-    border-block: 1px solid #ddd;
-    padding-block: 50px;
+  .shipping_service_item {
+    border-right: 1px solid #ddd;
+    cursor: pointer;
 
-    .shipping_service_item {
-        border-right: 1px solid #ddd;
-        cursor: pointer;
-
-        &:hover h1 {
-            color: $primary;
-        }
-
-        &:last-child {
-            border-right: none;
-        }
-        @include responsiveByBreakPoint(phone){
-            border-right: none;
-            text-align: center;
-        }
+    &:hover h1 {
+      color: $primary;
     }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    @include responsiveByBreakPoint(phone) {
+      border-right: none;
+      text-align: center;
+    }
+  }
 }
 
-.product_items{
-    img{
-        width: 100%;
-    }
+.product_items {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  text-align: center;
+  min-height: 300px;
+
+  img {
+    width: 100%;
+  }
 }

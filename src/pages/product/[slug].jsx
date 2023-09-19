@@ -38,7 +38,6 @@ const ProductDetails = () => {
     }
   );
   const { isLoading, error, data } = result;
-  console.log("result", data?.data);
   return (
     <Container size="xl" py="50px">
       <DetailsSection data={data?.data} />

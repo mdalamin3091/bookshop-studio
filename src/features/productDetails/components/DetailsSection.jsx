@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { Fragment } from "react";
 import {
   Box,
@@ -19,12 +20,13 @@ import {
 } from "react-icons/bi";
 import useResponsive from "@/hooks/useResponsive";
 import QuantityInput from "./QuantityInput";
-import styles from "../index.module.scss";
 import { Carousel } from "@mantine/carousel";
 import TabSection from "./TabSection";
+import styles from "../index.module.scss";
 
 const DetailsSection = ({ data }) => {
   const { isMobile } = useResponsive();
+
   return (
     <Fragment>
       <Grid gutter="xl">
@@ -33,45 +35,28 @@ const DetailsSection = ({ data }) => {
             <Carousel
               mx="auto"
               slideSize="100%"
-              withControls={true}
+              withControls={false}
               slideGap="xl"
               align="start"
               slidesToScroll={1}
             >
               {data?.gallery &&
-                data?.gallery.map((item, index) => (
-                  <Carousel.Slide key={data?.id}>
-                    <img
-                      src={item.src || data.thumbnail.src}
-                      alt={item.alt || data.thumbnail.alt}
-                    />
-                  </Carousel.Slide>
-                ))}
+                data?.gallery.map((item, _, array) => {
+                  return (
+                    <Carousel.Slide key={data?.id}>
+                      <img
+                        src={
+                          item
+                            ? item.src || data.thumbnail.src
+                            : "https://i.ibb.co/fNC7L5Z/No-Image-Placeholder.png"
+                        }
+                        alt={item.alt || data.thumbnail.alt}
+                      />
+                    </Carousel.Slide>
+                  );
+                })}
             </Carousel>
           </Box>
-          {/* <Carousel
-                        mx="auto"
-                        slideSize="33.333%"
-                        withControls={false}
-                        slideGap="xl"
-                        align="start"
-                        slidesToScroll={1}
-                    >
-                        {data?.gallery &&
-                            data?.gallery.map((item, index) => (
-                                <Carousel.Slide
-                                    align="center"
-                                    justify="flex-start"
-                                    key={data?.id}
-                                >
-                                    <img
-                                        src={item.src || data.thumbnail.src}
-                                        alt={item.alt || data.thumbnail.alt}
-                                        key={data?.id}
-                                    />
-                                </Carousel.Slide>
-                            ))}
-                    </Carousel> */}
         </Grid.Col>
         <Grid.Col span={isMobile ? 12 : 5}>
           <Stack spacing="md">

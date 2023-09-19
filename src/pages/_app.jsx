@@ -1,12 +1,11 @@
 import { wrapper } from "@/redux/app/store";
 import RootLayout from "@/layout";
-import { Loader, MantineProvider } from "@mantine/core";
-import SEO from "@/components/SEO";
-import "@/styles/globals.scss";
+import { MantineProvider } from "@mantine/core";
 import { Fragment, useEffect, useState } from "react";
 import { theme } from "@/utils/theme";
 import { useRouter } from "next/router";
 import Preloader from "@/components/Preloader";
+import "@/styles/globals.scss";
 
 const App = ({ Component, pageProps }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,13 +38,16 @@ const App = ({ Component, pageProps }) => {
     };
   }, [router]);
 
+  {
+    /* <h1>In the name of Allah</h1> */
+  }
+
   return (
     <>
       {isLoading ? (
         <Preloader />
       ) : (
         <Fragment>
-          <SEO />
           <MantineProvider withCSSVariables withNormalizeCSS theme={theme}>
             <RootLayout>
               <Component {...pageProps} />

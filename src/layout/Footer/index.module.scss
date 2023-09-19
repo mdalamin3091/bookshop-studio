@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+.footer_link {
+  position: relative;
+  width: fit-content;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    top: 22px;
+    left: 0;
+    background-color: $primary;
+    transition: all ease 0.5s;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}

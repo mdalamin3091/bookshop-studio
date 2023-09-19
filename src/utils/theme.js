@@ -24,5 +24,19 @@ export const theme = {
         },
       },
     },
+    Carousel: {
+      styles: {
+        container: {
+          marginBottom: "50px",
+        },
+        controls: {
+          top: "-45px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          gap: "15px",
+        },
+      },
+    },
   },
 };

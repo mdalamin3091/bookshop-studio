@@ -1,9 +1,12 @@
 @import "../../styles/_mixins.scss";
 @import "../../styles/_variables.scss";
 
-.thumbnail{
-    img{
-        width: 100%;
-    }
-    margin-bottom: 20px;
+.thumbnail {
+  img {
+    width: 100%;
+  }
+  margin-bottom: 20px;
+  .thumbnail_image {
+    width: 100%;
+  }
 }
