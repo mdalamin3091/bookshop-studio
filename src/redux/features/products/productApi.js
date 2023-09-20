@@ -3,8 +3,8 @@ import { apiSlice } from "../../app/api/apiSlice";
 const productApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getProductByCategory: builder.query({
-      query: () => ({
-        url: "product/v2/list/by/category/858/?page=1&items_per_page=10",
+      query: (categoryId = 858) => ({
+        url: `product/v2/list/by/category/${categoryId}/?page=1&items_per_page=10`,
       }),
     }),
 

@@ -33,9 +33,15 @@ const ProductsSection = () => {
             {/* <TabButton title="Featured" />
             <TabButton title="Best Seller" />
             <TabButton title="Most Popular" /> */}
-            <Button variant="filled">Featured</Button>
-            <Button variant="filled">Best Seller</Button>
-            <Button variant="filled">Most Popular</Button>
+            <Button variant="filled" bg="primaryColors.0">
+              Featured
+            </Button>
+            <Button variant="filled" bg="primaryColors.0">
+              Best Seller
+            </Button>
+            <Button variant="filled" bg="primaryColors.0">
+              Most Popular
+            </Button>
           </Flex>
           <Carousel
             mx="auto"
