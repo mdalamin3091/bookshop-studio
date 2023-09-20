@@ -9,7 +9,6 @@ import {
   SimpleGrid,
   Text,
 } from "@mantine/core";
-import TabButton from "@/components/TabButton";
 import { BsArrowRightShort } from "react-icons/bs";
 import useResponsive from "@/hooks/useResponsive";
 import { useGetProductByCategoryQuery } from "@/redux/features/products/productApi";
@@ -29,8 +28,14 @@ const SpecialProducts = () => {
         </Center>
       </Box>
       <Flex my="lg" justify="center" align="center" gap="md">
-        <TabButton title="Story" />
-        <TabButton title="Academic" />
+        {/* <TabButton title="Story" />
+        <TabButton title="Academic" /> */}
+        <Button variant="filled" bg="primaryColors.0">
+          Story
+        </Button>
+        <Button variant="filled" bg="primaryColors.0">
+          Academic
+        </Button>
       </Flex>
       <SimpleGrid cols={isMobile ? 2 : 5} spacing="lg">
         {data &&

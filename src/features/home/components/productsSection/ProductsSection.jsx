@@ -12,7 +12,6 @@ import {
 import { Carousel } from "@mantine/carousel";
 import useResponsive from "@/hooks/useResponsive";
 import NewArrivals from "./NewArrivals";
-import TabButton from "@/components/TabButton";
 import { useGetProductByCategoryQuery } from "@/redux/features/products/productApi";
 import styles from "../../index.module.scss";
 import Link from "next/link";
@@ -30,9 +29,6 @@ const ProductsSection = () => {
         </Grid.Col>
         <Grid.Col span={isMobile ? 12 : 9}>
           <Flex my="lg" justify="center" align="center" gap="md">
-            {/* <TabButton title="Featured" />
-            <TabButton title="Best Seller" />
-            <TabButton title="Most Popular" /> */}
             <Button variant="filled" bg="primaryColors.0">
               Featured
             </Button>

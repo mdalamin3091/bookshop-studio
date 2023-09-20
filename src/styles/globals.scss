@@ -9,33 +9,35 @@
 body {
   font-family: "Roboto", sans-serif;
 }
-.tabBtns {
-  border: 2px solid $primary;
-  outline: none;
-  padding: 8px 25px;
-  background: transparent;
-  border-radius: 4px;
-  font-size: $font-md;
-  color: #222;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all ease 0.3s;
 
-  &:hover {
-    background-color: $primary;
-    color: white;
-  }
-}
+// }
+// .tabBtns {
+//   border: 2px solid $primary;
+//   outline: none;
+//   padding: 8px 25px;
+//   background: transparent;
+//   border-radius: 4px;
+//   font-size: $font-md;
+//   color: #222;
+//   font-weight: 700;
+//   cursor: pointer;
+//   transition: all ease 0.3s;
 
-.tabBtns-active {
-  @extend .tabBtns;
+//   &:hover {
+//     background-color: $primary;
+//     color: white;
+//   }
+// }
 
-  background: $primary;
-  border-radius: 4px;
-  font-size: $font-md;
-  color: white;
-  font-weight: 700;
-}
+// .tabBtns-active {
+//   @extend .tabBtns;
+
+//   background: $primary;
+//   border-radius: 4px;
+//   font-size: $font-md;
+//   color: white;
+//   font-weight: 700;
+// }
 
 a {
   text-decoration: none;
