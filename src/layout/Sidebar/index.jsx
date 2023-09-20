@@ -1,7 +1,7 @@
 import { Divider, Drawer } from "@mantine/core";
 import { useDispatch, useSelector } from "react-redux";
 import { selectOpendrawer } from "@/redux/features/sidebar/sidebarSelector";
-import SidebarHeader from "./SidebarHeader";
+import SidebarHeader from "./components/SidebarHeader";
 import { selectThemeInfo } from "@/redux/features/themeData/themeSelector";
 import SideBarMenu from "./components/SideBarMenu";
 import { setOpenDrawer } from "@/redux/features/sidebar/sidebarSlice";

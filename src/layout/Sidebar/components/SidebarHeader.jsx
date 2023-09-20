@@ -3,7 +3,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { setOpenDrawer } from "@/redux/features/sidebar/sidebarSlice";
 import { Flex, Text } from "@mantine/core";
-import styles from "./sidebar.module.scss";
+import styles from "../sidebar.module.scss";
 
 const SidebarHeader = () => {
   const dispatch = useDispatch();

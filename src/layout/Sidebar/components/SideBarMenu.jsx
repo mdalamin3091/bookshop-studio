@@ -2,8 +2,15 @@ import React from "react";
 import Link from "next/link";
 import { BsChevronRight } from "react-icons/bs";
 import styles from "../sidebar.module.scss";
+import { selectThemeInfo } from "@/redux/features/themeData/themeSelector";
+import { useSelector } from "react-redux";
 
 const SideBarMenu = () => {
+  const { data: { header: { body } = {} } = {} } =
+    useSelector(selectThemeInfo) || {};
+  const { category_menu, primary_menu } = body || {};
+  console.log("body", body);
+
   return (
     <div className={styles.sidebar_menu}>
       <ul className={styles.sidebar_menu_ul}>

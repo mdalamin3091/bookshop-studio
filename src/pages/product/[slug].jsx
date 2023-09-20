@@ -37,7 +37,7 @@ const ProductDetails = () => {
       skip: router.isFallback,
     }
   );
-  const { isLoading, error, data } = result;
+  const { data } = result;
   return (
     <Container size="xl" py="50px">
       <DetailsSection data={data?.data} />
