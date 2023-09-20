@@ -100,11 +100,7 @@ const Footer = () => {
           </Text>
           <Stack gap="sm">
             {column4?.list?.menubar_87srO8?.list.map((link) => (
-              <Link
-                href={link.path}
-                key={link.id}
-                className={styles.footer_link}
-              >
+              <Link href="/" key={link.id} className={styles.footer_link}>
                 {link.text}
               </Link>
             ))}
