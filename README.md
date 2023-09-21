@@ -21,7 +21,7 @@ In this project, we aim to create a contemporary e-commerce website with a focus
 
 ### Technology Stack:
 
-- Frontend Framework: React
+- Frontend library: React
 - UI Component Library: Mantine UI
 - Styling: Sass
 - State Management: Redux Toolkit with RTK Query
