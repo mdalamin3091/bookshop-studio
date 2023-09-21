@@ -11,7 +11,7 @@ In this project, we aim to create a contemporary e-commerce website with a focus
 
 1. Homepage Design: We will design an engaging and user-friendly homepage using Mantine UI components. This will include features like product carousels, navigation menus, and product categories, all seamlessly integrated into a visually appealing layout.
 
-2. Product Details Page: The product details page will provide in-depth information about each product. We'll leverage Mantine UI for components like product images, descriptions, customer reviews, and interactive elements. Users will have the ability to view and purchase products with ease.
+2. Product Details Page: The product details page will provide in-depth information about each product. We'll leverage Mantine UI for components like product images, descriptions, and interactive elements. Users will have the ability to view and purchase products with ease.
 
 3. API Integration: All data retrieval and management will be handled through RTK Query, ensuring efficient API calls and a smooth user experience. This includes fetching product details, user profiles, and any other necessary data.
 
