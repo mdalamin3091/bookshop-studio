@@ -25,4 +25,4 @@ In this project, we aim to create a contemporary e-commerce website with a focus
 - UI Component Library: Mantine UI
 - Styling: Sass
 - State Management: Redux Toolkit with RTK Query
-- Server-Side Rendering: Next.js (or an equivalent SSR framework)
+- Server-Side Rendering: Next.js
