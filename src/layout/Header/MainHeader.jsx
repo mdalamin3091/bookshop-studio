@@ -49,7 +49,7 @@ const MainHeader = () => {
               {isMobile ||
                 (body?.primary_menu &&
                   body.primary_menu.map((menu) => (
-                    <li key={menu.id}>
+                    <li key={menu.id} className={styles.link}>
                       <Link href="/">{menu.text}</Link>
                     </li>
                   )))}
