@@ -6,6 +6,7 @@ import { theme } from "@/utils/theme";
 import { useRouter } from "next/router";
 import Preloader from "@/components/Preloader";
 import "@/styles/globals.scss";
+import SEO from "@/components/SEO";
 
 const App = ({ Component, pageProps }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,6 +49,7 @@ const App = ({ Component, pageProps }) => {
         <Preloader />
       ) : (
         <Fragment>
+          <SEO />
           <MantineProvider withCSSVariables withNormalizeCSS theme={theme}>
             <RootLayout>
               <Component {...pageProps} />
