@@ -1,7 +1,7 @@
 # Starting with Bookshop Studio
 
 [Bookshop](https://bookshop-studio.vercel.app/)
-![Bookshop](https://i.ibb.co/k1HYCkr/bookshop-studio.png)
+(https://i.ibb.co/k1HYCkr/bookshop-studio.png)
 
 ### Overview
 
