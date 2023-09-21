@@ -5,7 +5,7 @@
 
 ### Overview
 
-In this project, we aim to create a contemporary e-commerce website with a focus on performance, maintainability, and a sleek user interface. To achieve this, we will leverage the Mantine UI component library for our frontend design and Sass for styling. All our API calls will be implemented using Redux Toolkit Query (RTK Query), and the website will follow server-side rendering (SSR) principles for optimal SEO and user experience.
+In this project, we aim to create a contemporary e-commerce website with a focus on performance, maintainability, and a sleek user interface. To achieve this, we will leverage the Mantine UI component library for our front-end design and Sass for styling. All our API calls will be implemented using Redux Toolkit Query (RTK Query), and the website will follow server-side rendering (SSR) principles for optimal SEO and user experience.
 
 ### Key Objectives:
 
