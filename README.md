@@ -1,38 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Starting with Bookshop Studio
 
-## Getting Started
+[Bookshop](https://bookshop-studio.vercel.app/)
+![Bookshop](https://i.ibb.co/zn7xdzw/bookshop-studio-vercel-app.png)
 
-First, run the development server:
+### Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+-In this project, we aim to create a contemporary e-commerce website with a focus on performance, maintainability, and a sleek user interface. To achieve this, we will leverage the Mantine UI component library for our frontend design and Sass for styling. All our API calls will be implemented using Redux Toolkit Query (RTK Query), and the website will follow server-side rendering (SSR) principles for optimal SEO and user experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Key Objectives:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. Homepage Design: We will design an engaging and user-friendly homepage using Mantine UI components. This will include features like product carousels, navigation menus, and product categories, all seamlessly integrated into a visually appealing layout.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+2. Product Details Page: The product details page will provide in-depth information about each product. We'll leverage Mantine UI for components like product images, descriptions, customer reviews, and interactive elements. Users will have the ability to view and purchase products with ease.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+3. API Integration: All data retrieval and management will be handled through RTK Query, ensuring efficient API calls and a smooth user experience. This includes fetching product details, user profiles, and any other necessary data.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Folder Structure: We'll maintain a well-structured project folder hierarchy to keep our codebase organized and easily maintainable. Components, Redux slices, styles, and utility functions will be neatly organized.
 
-## Learn More
+5. Server-Side Rendering: The website will utilize server-side rendering for faster initial page loads, improved SEO, and optimal user experience. This will be achieved using libraries like Next.js or a similar SSR framework
 
-To learn more about Next.js, take a look at the following resources:
+### Technology Stack:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Frontend Framework: React
+- UI Component Library: Mantine UI
+- Styling: Sass
+- State Management: Redux Toolkit with RTK Query
+- Server-Side Rendering: Next.js (or an equivalent SSR framework)
